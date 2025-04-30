@@ -37,9 +37,10 @@ class ReconResults:
         self.errors = []  # List of errors encountered
 
 ###### Create output directory to store the result
-def create_output_directory(domain):
+def create_output_directory(domain, output):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = f"recon_{domain}_{timestamp}"
+    if not output:
+        output_dir = f"recon_{domain}_{timestamp}"
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -786,7 +787,6 @@ def main():
 """
     
     console.print(Panel(ghost_peek_art, border_style="blue", padding=(1, 2)))
-    
     # Get domain from args or user input
     domain = args.domain
     if not domain:
@@ -797,7 +797,12 @@ def main():
     
     results = ReconResults(domain)
     
-    output_dir = args.output if args.output else create_output_directory(domain)
+    if args.output:
+        output_dir = args.output
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+    else:
+        output_dir = create_output_directory(domain)
     console.print(f"[bold]Your secrets will be stored in: [green]{output_dir}[/green][/bold]")
     
     get_whois_info(domain, output_dir, results)
