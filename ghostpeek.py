@@ -37,10 +37,9 @@ class ReconResults:
         self.errors = []  # List of errors encountered
 
 ###### Create output directory to store the result
-def create_output_directory(domain, output):
+def create_output_directory(domain):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    if not output:
-        output_dir = f"recon_{domain}_{timestamp}"
+    output_dir = f"recon_{domain}_{timestamp}"
     
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
