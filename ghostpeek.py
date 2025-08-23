@@ -196,7 +196,7 @@ def wapp(domain, output_dir, results):
         results.errors.append(f"Technology detection error for {domain}: {str(e)}")
         return []
 
-def seli(domain, output_dir, results, max_retries=2):
+def seli(domain, output_dir, results, max_retries=1):
     screenshot_path = os.path.join(output_dir, f"screenshot_{domain}.png")
     
     for attempt in range(max_retries + 1):

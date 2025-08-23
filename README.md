@@ -1,6 +1,6 @@
 # 👻 GhostPeek
 
-A cool domain reconnaissance tool that helps you discover tons of information about any website with just one command!
+A domain reconnaissance tool that helps you discover tons of information about any website with just one command!
 
 ## What is GhostPeek?
 
@@ -16,7 +16,7 @@ GhostPeek is a Python tool I made to learn more about web domains. Give it a dom
 
 ## Why I Made This
 
-I created GhostPeek as a personal project to learn more about how websites are structured and to practice my Python skills. It combines a bunch of different tools into one simple command, saving you time when you want to check out a website's technical details.
+I created GhostPeek as a personal project to learn more about how websites are structured and to practice my Python skills. It combines a bunch of different tools into one simple command, saving you time when you want to check out a website's technical details. Make sure to retry again in few mins if it catches 0 subdomains. 
 
 ## Installation
 
@@ -113,7 +113,7 @@ Identifying technology fingerprints for example.com...
 - jQuery
 - Google Analytics
 
-Capturing visual evidence of example.com (attempt 1/3)...
+Capturing visual evidence of example.com (attempt 1/2)...
 Loading https://example.com...
 Waiting for page to stabilize...
 Setting viewport to capture full page: 1200x800
