@@ -1,24 +1,32 @@
 # 👻 GhostPeek
 
-A domain reconnaissance tool that helps you discover tons of information about any website with just one command!
+![GhostPeek Banner](https://img.shields.io/badge/GhostPeek-Domain%20Reconnaissance-blue?style=for-the-badge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)](https://www.python.org/downloads/)
 
-## What is GhostPeek?
+**GhostPeek is a stealthy domain reconnaissance tool that silently collects intelligence on web domains.** Like a ghost, it reveals hidden digital footprints without drawing attention.
+
+## What is GhostPeek and it's Features?
 
 GhostPeek is a Python tool I made to learn more about web domains. Give it a domain name, and it will quietly gather all sorts of interesting information:
 
-- 🔍 Finds subdomains you didn't know existed
-- ℹ️ Shows who owns the domain (WHOIS info)
-- 🌐 Maps out all the DNS records
-- 🖥️ Discovers what IP addresses the domain uses
-- 🔧 Identifies what technologies the website is built with
-- 📸 Takes screenshots of the websites
-- 📊 Creates a nice HTML report you can browse
+- 🔍 **Subdomain Discovery** - Finds subdomains you didn't know existed
+- ℹ️ **WHOIS Intelligence** - Shows domain ownership and registration details  
+- 🌐 **DNS Mapping** - Maps out all DNS records (A, NS, MX, CNAME, etc.)
+- 🖥️ **IP Resolution** - Discovers IP addresses and ASN information
+- 🔧 **Technology Detection** - Identifies web technologies and frameworks
+- 📸 **Visual Screenshots** - Captures website screenshots automatically
+- 📊 **HTML Reports** - Generates comprehensive, browsable reports
+- ⚡ **Multi-threading** - Fast concurrent scanning
+- 🎨 **Rich Terminal UI** - Beautiful command-line interface
 
 ## Why I Made This
 
 I created GhostPeek as a personal project to learn more about how websites are structured and to practice my Python skills. It combines a bunch of different tools into one simple command, saving you time when you want to check out a website's technical details. Make sure to retry again in few mins if it catches 0 subdomains. 
 
-## Installation
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
 # Clone the repo
@@ -29,7 +37,7 @@ cd ghostpeek
 pip install -r requirements.txt
 ```
 
-### Dependencies
+### Requirements
 
 - Python 3.6+
 - requests
@@ -40,16 +48,23 @@ pip install -r requirements.txt
 - python-Wappalyzer
 - setuptools
 
-## How to Use
+## Basic Usage
 
-Simple usage:
 ```bash
+# Scan a domain
 python ghostpeek.py -d example.com
-```
 
-Or run the script and enter the domain when prompted:
-```bash
+# Interactive mode
 python ghostpeek.py
+
+# Custom output directory
+python ghostpeek.py -d example.com -o /path/to/output
+
+# Adjust threading
+python ghostpeek.py -d example.com -t 20
+
+# Disable threading for sequential processing
+python ghostpeek.py -d example.com --no-threading
 ```
 
 ### Options
@@ -63,86 +78,60 @@ python ghostpeek.py
 
 ## Example Output
 
-When you run GhostPeek, you'll see something like this:
+When you run GhostPeek, you'll see a beautiful ASCII banner followed by real-time scanning progress:
+
 
 ```
-  ▄████  ██░ ██  ▒█████    ██████ ▄▄▄█████▓ ██▓███  ▓█████ ▓█████  ██ ▄█▀
- ██▒ ▀█▒▓██░ ██▒▒██▒  ██▒▒██    ▒ ▓  ██▒ ▓▒▓██░  ██▒▓█   ▀ ▓█   ▀  ██▄█▒ 
-▒██░▄▄▄░▒██▀▀██░▒██░  ██▒░ ▓██▄   ▒ ▓██░ ▒░▓██░ ██▓▒▒███   ▒███   ▓███▄░ 
-░▓█  ██▓░▓█ ░██ ▒██   ██░  ▒   ██▒░ ▓██▓ ░ ▒██▄█▓▒ ▒▒▓█  ▄ ▒▓█  ▄ ▓██ █▄ 
-░▒▓███▀▒░▓█▒░██▓░ ████▓▒░▒██████▒▒  ▒██▒ ░ ▒██▒ ░  ░░▒████▒░▒████▒▒██▒ █▄
- ░▒   ▒  ▒ ░░▒░▒░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░  ▒ ░░   ▒▓▒░ ░  ░░░ ▒░ ░░░ ▒░ ░▒ ▒▒ ▓▒
-  ░   ░  ▒ ░▒░ ░  ░ ▒ ▒░ ░ ░▒  ░ ░    ░    ░▒ ░      ░ ░  ░ ░ ░  ░░ ░▒ ▒░     made by kaizoku
-░ ░   ░  ░  ░░ ░░ ░ ░ ▒  ░  ░  ░    ░      ░░          ░      ░   ░ ░░ ░ 
-      ░  ░  ░  ░    ░ ░        ░                      ░  ░   ░  ░░  ░   
+▄████ ██░ ██ ▒█████ ██████ ▄▄▄█████▓ ██▓███ ▓█████ ▓█████ ██ ▄█▀
+██▒ ▀█▒▓██░ ██▒▒██▒ ██▒▒██ ▒ ▓ ██▒ ▓▒▓██░ ██▒▓█ ▀ ▓█ ▀ ██▄█▒
+...
 
 Give your desire domain: example.com
+Your secrets will be stored in: recon_example.com_20250825_143022
 
-Your secrets will be stored in: recon_example.com_20250421_123456
+✓ Revealing WHOIS secrets for example.com
+✓ Hunting for subdomains of example.com
+✓ Found 15 unique domains
+✓ Unmasking domains and resolving IPs
+✓ Decoding DNS secrets
+✓ Identifying technology fingerprints
+✓ Capturing visual evidence
 
-Revealing WHOIS secrets for example.com
-Domain Name      : EXAMPLE.COM
-Registrar        : RESERVED-Internet Assigned Numbers Authority
-Creation Date    : 1992-01-01 00:00:00
-Expiration Date  : 2023-01-01 00:00:00
-
-Hunting for subdomains of example.com
-Found 3 unique domain(s)
-→ example.com
-→ www.example.com
-→ mail.example.com
-
-Unmasking 3 domains
-Infiltrating example.com...
-✓ example.com resolves to 93.184.216.34
-Decoding DNS secrets for example.com...
-A: 93.184.216.34
-NS: a.iana-servers.net
-NS: b.iana-servers.net
-MX: 0 example.com.s1a1.psmtp.com
-
-Tracing ASN network for 93.184.216.34...
-ASN         : 15133
-Name        : EDGECAST
-Description : EDGECAST - EDGECAST CDN
-RIR         : ARIN
-Country     : US
-
-Identifying technology fingerprints for example.com...
-- Cloudflare
-- jQuery
-- Google Analytics
-
-Capturing visual evidence of example.com (attempt 1/2)...
-Loading https://example.com...
-Waiting for page to stabilize...
-Setting viewport to capture full page: 1200x800
-Scrolling through page...
-Taking screenshot...
-Screenshot saved to recon_example.com_20250421_123456/screenshot_example.com.png
-
-Mission accomplished!
-Your intelligence report awaits: recon_example.com_20250421_123456/report.html
+Mission accomplished! 🎉
+Your intelligence report awaits: recon_example.com_20250825_143022/report.html
 ```
 
 ## The HTML Report
 
 After GhostPeek finishes, it will automatically open an HTML report in your browser with tabs for:
-- Overview with key information
-- WHOIS details
-- Subdomain list
-- DNS records for each domain
-- Technology stack
-- Screenshots of all websites
+
+- **📊 Overview** - Summary of findings and key metrics
+- **ℹ️ WHOIS Details** - Domain registration and ownership info
+- **🔍 Subdomains** - Complete list of discovered subdomains
+- **🌐 DNS Records** - Detailed DNS information for each domain
+- **🔧 Technologies** - Identified web technologies and frameworks
+- **📸 Screenshots** - Visual captures of all accessible websites
 
 ## Disclaimer
 
-This tool is meant for learning and exploring websites you have permission to scan.
+**This tool is designed for educational purposes and authorized security testing only.**
+
+- Only scan domains you own or have explicit permission to test
+- Respect robots.txt and website terms of service  
+- Be mindful of rate limiting to avoid overwhelming target servers
+- Use responsibly and ethically
 
 ## License
 
-This project is open source, feel free to use and modify it. Just don't forget to credit me if you share it!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Connect
+
+- **Author**: kaizoku73
+- **GitHub**: [@kaizoku73](https://github.com/kaizoku73)
 
 ---
 
-Made with ❤️ by kaizoku
+<div align="center">
+Made with ❤️ by kaizoku | ⭐ Star this repo if you found it helpful!
+</div>

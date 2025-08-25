@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+GhostPeek - Domain Reconnaissance Tool
+Author: kaizoku73
+Version: 1.0.0
+"""
+
+__version__ = "1.0.0"
+__author__ = "kaizoku73"
+
 import requests
 import dns.resolver
 import json
