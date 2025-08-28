@@ -26,7 +26,20 @@ I created GhostPeek as a personal project to learn more about how websites are s
 
 ## 🚀 Quick Start
 
-### Installation
+### One-Line Installation
+
+```bash
+# User installation
+curl -sSL https://raw.githubusercontent.com/kaizoku73/Ghostpeek/main/install.sh | bash
+
+# System-wide installation (requires sudo)
+curl -sSL https://raw.githubusercontent.com/kaizoku73/Ghostpeek/main/install.sh | sudo bash
+
+# After installation, simply run:
+ghostpeek -d example.com
+```
+
+### Manual Installation
 
 ```bash
 # Clone the repo
