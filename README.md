@@ -26,6 +26,12 @@ I created GhostPeek as a personal project to learn more about how websites are s
 
 ## 🚀 Quick Start
 
+### Installation
+
+```bash
+pip install ghostpeek
+```
+
 ### One-Line Installation
 
 ```bash

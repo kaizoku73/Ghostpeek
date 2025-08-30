@@ -2,10 +2,10 @@
 """
 GhostPeek - Domain Reconnaissance Tool
 Author: kaizoku73
-Version: 1.0.0
+Version: 1.1.0
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __author__ = "kaizoku73"
 
 import requests
