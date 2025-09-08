@@ -3,7 +3,6 @@
 ![GhostPeek Banner](https://img.shields.io/badge/GhostPeek-Domain%20Reconnaissance-blue?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)](https://www.python.org/downloads/)
-[![PyPI version](https://badge.fury.io/py/ghostpeek.svg)](https://badge.fury.io/py/ghostpeek)
 [![Downloads](https://pepy.tech/badge/ghostpeek)](https://pepy.tech/project/ghostpeek)
 
 **GhostPeek is a stealthy domain reconnaissance tool that silently collects intelligence on web domains.** Like a ghost, it reveals hidden digital footprints without drawing attention.
