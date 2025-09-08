@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "ghostpeek"
 version = "1.0.0"
 authors = [
-    {name = "kaizoku73", email = "kaizoku73@proton.me"},
+    {name = "kaizoku73", email = "ultimate0134@gmail.com"},
 ]
 description = "A stealthy domain reconnaissance tool for subdomain discovery and intelligence gathering"
 readme = "README.md"
